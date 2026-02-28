@@ -33,6 +33,33 @@ Combined, these two techniques make it very easy to experiment with changes to y
 
 It also makes it possible to share temporary schema changes with others during Pull Request testing.
 
+### Running migrations and seeds
+
+This project includes helper scripts for running Knex migrations and seeds:
+
+- `npm run db:migrate` – runs all pending migrations
+- `npm run db:seed` – runs all seed files
+- `npm run db:setup` – runs migrations and then seeds (fresh setup)
+
+The `db:setup` command is useful when:
+
+- You are starting the project for the first time
+- You want to reset your local database
+- You are running the demo version of the API
+
+### Important for trainees
+
+Knex migrations and seeds are an **advanced database management technique** often used in professional backend projects.
+
+For homework and learning purposes, you are expected to:
+
+- Design your own database schema
+- Write your own SQL queries
+- Understand how your tables are structured
+
+You should not rely blindly on the provided migrations if your assignment requires you to build your own schema.  
+If needed, modify or remove the existing migrations and seeds to match your database coursework.
+
 ## Deploying
 
 > Last tested: 2025-07-08
