@@ -58,7 +58,7 @@ For your tasks, assignments and learning purposes, you are expected to:
 - Understand how your tables are structured
 
 You should not rely blindly on the provided migrations if your assignment requires you to build your own schema.  
-If needed, modify or remove the existing migrations and seeds to match your database coursework.
+If needed, modify or remove the existing migrations and seeds to match your database assignments.
 
 ## Deploying
 
