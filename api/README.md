@@ -51,7 +51,7 @@ The `db:setup` command is useful when:
 
 Knex migrations and seeds are an **advanced database management technique** often used in professional backend projects.
 
-For homework and learning purposes, you are expected to:
+For your tasks, assignments and learning purposes, you are expected to:
 
 - Design your own database schema
 - Write your own SQL queries
