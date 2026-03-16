@@ -126,6 +126,8 @@ export async function getEventById(req, res, next) {
  * scope is explicitly added.
  */
 export async function postEvent(req, res, next) {
+
+    // OPTIONAL TODO: implement this handler only if optional scope is taken on
     try {
         await createEvent(req.body);
 
@@ -147,6 +149,7 @@ export async function postEvent(req, res, next) {
  * It is NOT part of the required trainee implementation in the default scope.
  */
 export async function patchEvent(req, res, next) {
+    // OPTIONAL TODO: implement this handler only if optional scope is taken on
     try {
         await updateEvent(req.params.id, req.body);
 
@@ -168,6 +171,7 @@ export async function patchEvent(req, res, next) {
  * It is NOT part of the required trainee implementation in the default scope.
  */
 export async function removeEvent(req, res, next) {
+    // OPTIONAL TODO: implement this handler only if optional scope is taken on
     try {
         await deleteEvent(req.params.id);
 
