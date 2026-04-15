@@ -61,9 +61,16 @@ Then you're ready to start it up:
 
 ```
 npm install
-npm run db:setup
 npm run dev
 ```
+
+If you are using the included demo migration and seed files, run this before `npm run dev`:
+
+```bash
+npm run db:setup
+```
+
+If you created your own PostgreSQL schema during the earlier database weeks and imported it separately, you do not need to run the included demo migrations and seeds. In that case, make sure your database schema matches the API code you are running.
 
 You can then test the API using [Postman](https://www.postman.com/) at [http://localhost:3001/api](http://localhost:3001/api) - or just open it in your browser, for a quick peek that things are connecting successfully!
 

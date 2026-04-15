@@ -67,6 +67,10 @@ This project includes helper scripts for running Knex migrations and seeds:
 - `npm run db:migrate:make <name>` – creates a new migration file using the standard Knex CLI
 - `npm run db:seed:make <name>` – creates a new seed file using the standard Knex CLI
 
+If you are using the included example schema in this repository, run `npm run db:setup` before starting the API.
+
+If you built your own PostgreSQL schema during the database weeks and imported it separately, the included demo migration and seed files are optional. In that case, your own schema becomes the source of truth, and it must match the API code you are running.
+
 You can use either the npm scripts above or the Knex CLI directly from inside the `api` directory.
 
 Example:
