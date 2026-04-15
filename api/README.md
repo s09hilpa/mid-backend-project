@@ -21,6 +21,46 @@ This project uses modern JavaScript modules throughout the codebase.
 - Use `import` / `export` syntax in project files
 - If you see older Node.js examples online using `require()` and `module.exports`, that is CommonJS syntax and not the style used in this repository
 
+## Middleware placement
+
+This project uses middleware in more than one place, depending on what the middleware is supposed to do.
+
+- Use `globalMiddlewares` for middleware that should run before all routes
+- Use `terminalMiddlewares` for fallback and error handling after routes
+- Use router-level or route-level middleware for protected endpoints or feature-specific behavior
+
+Examples:
+
+- logging middleware can be global
+- an optional auth extractor can be global if it does not block public routes
+- `requireAuth` should usually be attached on protected routers or routes
+- 404 and error handlers belong in the terminal middleware group
+
+In general, if a middleware would block public endpoints such as `/api/events`, do not add it as a global middleware.
+
+### Example
+
+Router-level middleware protects all routes in that router:
+
+```js
+import express from "express";
+import { requireAuth } from "#middlewares/auth.js";
+
+const ordersRouter = express.Router();
+
+ordersRouter.use(requireAuth);
+
+ordersRouter.get("/", getOrders);
+ordersRouter.get("/:id", getOrderById);
+```
+
+Route-level middleware protects only one specific route:
+
+```js
+eventsRouter.get("/", getEvents); // public
+eventsRouter.post("/", requireAuth, postEvent); // protected
+```
+
 ## Database clients
 
 The package comes installed with SQLite, MySQL, and PostgreSQL clients because it is based on a shared template.
