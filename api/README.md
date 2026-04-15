@@ -14,6 +14,13 @@ You can set environment variables in the `.env` file or in the Render.com enviro
 
 When you start a fresh project, check out `.env-template` to get started. Create a file called `.env` and copy the contents of the template as a starting point (or just run `cp .env-template .env`). You should comment in/out the sections you need, and add any additional configuration as necessary.
 
+## Important for trainees
+
+This project uses modern JavaScript modules throughout the codebase.
+
+- Use `import` / `export` syntax in project files
+- If you see older Node.js examples online using `require()` and `module.exports`, that is CommonJS syntax and not the style used in this repository
+
 ## Database clients
 
 The package comes installed with SQLite, MySQL, and PostgreSQL clients because it is based on a shared template.
@@ -75,6 +82,41 @@ npx knex migrate:make create_user_table
 ```
 
 Both commands create a timestamped migration file in `src/db/migrations`.
+
+### Creating a new migration or seed
+
+Migrations and seeds are considered advanced project tooling in this repository, so the README only documents the local project conventions and the basic commands. For more complete usage patterns, refer to the official Knex documentation.
+
+Create a migration:
+
+```bash
+npm run db:migrate:make create_user_table
+```
+
+Create a seed:
+
+```bash
+npm run db:seed:make 002_users
+```
+
+New migration files are created in `src/db/migrations`, and new seed files are created in `src/db/seeds`.
+
+For migrations, Knex expects an `up()` function for applying the schema change and a `down()` function for rolling it back:
+
+```js
+export async function up(knex) {
+    await knex.schema.createTable("user", (table) => {
+        table.increments("id").primary();
+        table.string("email").notNullable().unique();
+    });
+}
+
+export async function down(knex) {
+    await knex.schema.dropTableIfExists("user");
+}
+```
+
+See the [Knex migration documentation](https://knexjs.org/guide/migrations.html) and [Knex seed documentation](https://knexjs.org/guide/migrations.html#seed-files) for more details.
 
 The `db:setup` command is useful when:
 
