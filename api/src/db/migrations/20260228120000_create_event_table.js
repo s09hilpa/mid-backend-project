@@ -9,6 +9,9 @@ export async function up(knex) {
         t.string("title").notNullable();
         t.text("description");
         t.timestamps(true, true);
+        t.date("event_date").notNullable();
+        t.time("event_time").notNullable();
+        t.string("venue").notNullable();
     });
 }
 
