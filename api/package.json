@@ -20,6 +20,7 @@
     "db:seed:make": "npx knex seed:make"
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.5",
     "deepmerge": "^4.3.1",
