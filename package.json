@@ -1,0 +1,25 @@
+{
+  "name": "mid-backend-project",
+  "version": "1.0.0",
+  "description": "<img src=\"./images/hyf.svg\" alt=\"image\" width=\"200px\" height=\"200px\">",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s09hilpa/mid-backend-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/s09hilpa/mid-backend-project/issues"
+  },
+  "homepage": "https://github.com/s09hilpa/mid-backend-project#readme",
+  "dependencies": {
+    "knex": "^3.2.9",
+    "sqlite3": "^6.0.1"
+  }
+}
