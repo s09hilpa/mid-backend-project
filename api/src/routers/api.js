@@ -1,8 +1,9 @@
 import express from "express";
-import eventsRouter from "#routers/events.js";
+import eventRouter from "./event.router.js";
 
 const apiRouter = express.Router();
 
-apiRouter.use("/events", eventsRouter);
+// ❌ NO /api HERE (IMPORTANT FIX)
+apiRouter.use("/events", eventRouter);
 
 export default apiRouter;
