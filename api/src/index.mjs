@@ -6,9 +6,13 @@ import bodyParser from "body-parser";
 import rootRouter from "#routers";
 import swaggerSetup from "#configs/swagger.js";
 import { globalMiddlewares, terminalMiddlewares } from "#middlewares";
+import apiRouter from "./routers/api.js";
+app.use(express.json());
+
+// THIS IS REQUIRED
+app.use("/api", apiRouter);
 
 const app = express();
-
 
 app.use(cors());
 app.use(bodyParser.json());
