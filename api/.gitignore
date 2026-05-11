@@ -5,3 +5,4 @@ node_modules
 # remove this rule and commit it explicitly.
 src/db/*.sqlite
 src/db/*.db
+node_modules/
