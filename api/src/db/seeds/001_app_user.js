@@ -22,35 +22,30 @@ export async function seed(knex) {
   // ✅ IMPORTANT: add explicit IDs
   const users = [
     {
-      id: 1,
       name: "John Doe",
       email: "john.doe@example.com",
       mobile: 4512345678,
       password: passwords[0],
     },
     {
-      id: 2,
       name: "Jane Smith",
       email: "jane.smith@example.com",
       mobile: 4522334455,
       password: passwords[1],
     },
     {
-      id: 3,
       name: "Michael Johnson",
       email: "michael.johnson@example.com",
       mobile: 4533445566,
       password: passwords[2],
     },
     {
-      id: 4,
       name: "Emily Davis",
       email: "emily.davis@example.com",
       mobile: 4544556677,
       password: passwords[3],
     },
     {
-      id: 5,
       name: "Ali Khan",
       email: "ali.khan@example.com",
       mobile: 4555667788,
