@@ -1,0 +1,220 @@
+{
+	"info": {
+		"_postman_id": "f9021cf5-bd48-4765-b72d-ad8f327f2220",
+		"name": "week5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "54556637",
+		"_collection_link": "https://shilpajumde5-2718075.postman.co/workspace/Mid-backend_poject~e9ddcd8e-15eb-4bea-9f46-2c770ea30830/collection/54556637-f9021cf5-bd48-4765-b72d-ad8f327f2220?action=share&source=collection_link&creator=54556637"
+	},
+	"item": [
+		{
+			"name": "LOGIN",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"john.doe@example.com\",\n  \"password\": \"password123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD ITEM TO CART",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjI4LCJlbWFpbCI6ImpvaG4uZG9lQGV4YW1wbGUuY29tIiwiaWF0IjoxNzc4NzYyNjg0LCJleHAiOjE3Nzg4NDkwODR9.vL2bS39w27k62ZVb6Waxha-agMCd6cGo-X-fy7QaOuY",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"eventId\": 1,\n  \"quantity\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/cart/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cart",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VIEW CART",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"eventId\": 1,\n  \"quantity\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE CART ITEM",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"quantity\": 4\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/cart/items/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cart",
+						"items",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE CART ITEM",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/cart/items/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cart",
+						"items",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ADD ITEM AGAIN FOR CHECKOUT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"eventId\": 2,\n  \"quantity\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/cart/items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"cart",
+						"items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CHECKOUT",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "VERIFY CART IS EMPTY",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL ORDERS",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
